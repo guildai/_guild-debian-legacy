@@ -1,0 +1,9 @@
+#!/usr/bin/make -f
+
+.PHONY: build
+build:
+	make
+	make test
+
+binary:
+	@echo no way jose!

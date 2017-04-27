@@ -1,0 +1,16 @@
+Source: guild
+Section: contrib/devel
+Priority: optional
+Maintainer: Garrett Smith <garrett@guild.ai>
+Build-Depends: debhelper (>=9)
+Standards-Version: 3.9.6
+Homepage: https://guild.ai
+Vcs-Git: https://github.com/guildai/guild.git
+Vcs-Browser: https://github.com/guildai/guild
+
+Package: guild
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: real time visualization for TensorFlow
+ Command line tool that streamlines TensorFlow development and
+ provides dynamic visualization of operations and trained models.
