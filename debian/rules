@@ -10,6 +10,7 @@ build:
 
 override_dh_auto_clean:
 	make clean
+	rm -rf releases
 
 override_dh_auto_build:
 	make
@@ -19,6 +20,4 @@ override_dh_auto_test:
 
 override_dh_auto_install:
 	make VERSION=$(VERSION) release
-
-testyo:
 	RELEASE="releases/guild_$(VERSION)_*/" debian/scripts/install
