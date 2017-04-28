@@ -1,2 +1,5 @@
 /guild
 /guild.debhelper.log
+/debhelper-build-stamp
+/files
+/guild.substvars
