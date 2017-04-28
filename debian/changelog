@@ -1,3 +1,9 @@
+guild (0.1.0~pre1-2) UNRELEASED; urgency=low
+
+  * UI tweaks
+
+ -- Garrett Smith <garrett@guild.ai>  Thu, 27 Apr 2017 20:02:00 -0500
+
 guild (0.1.0~pre1-1) UNRELEASED; urgency=low
 
   * Initial release
