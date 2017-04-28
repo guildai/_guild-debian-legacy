@@ -1,9 +1,24 @@
 #!/usr/bin/make -f
 
+VERSION=`cat debian/VERSION`
+
 .PHONY: build
 build:
+	dh build
+%:
+	dh $@
+
+override_dh_auto_clean:
+	make clean
+
+override_dh_auto_build:
 	make
+
+override_dh_auto_test:
 	make test
 
-binary:
-	@echo no way jose!
+override_dh_auto_install:
+	make VERSION=$(VERSION) release
+
+testyo:
+	RELEASE="releases/guild_$(VERSION)_*/" debian/scripts/install

@@ -1,5 +1,5 @@
-guild (0.1.0-pre1-1) unstable; urgency=medium
+guild (0.1.0~pre1-1) UNRELEASED; urgency=low
 
-  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+  * Initial release
 
- -- Garrett Smith <garrett@unknown>  Thu, 27 Apr 2017 10:11:48 -0500
+ -- Garrett Smith <garrett@guild.ai>  Thu, 27 Apr 2017 10:11:48 -0500

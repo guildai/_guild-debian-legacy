@@ -1,0 +1,26 @@
+#!/bin/bash
+
+PREFIX=debian/guild/usr
+BINDIR=$PREFIX/bin
+LIBDIR=$PREFIX/lib/guild
+ERTS_VER=`ls $RELEASE | grep -Po "(?<=erts-)(\d+\.?)+"`
+
+mkdir -p $BINDIR
+mkdir -p $LIBDIR
+
+cp -a $RELEASE/lib $LIBDIR/
+cp -a $RELEASE/erts-*/ $LIBDIR/
+cp $RELEASE/bin/*.boot $LIBDIR/
+
+cat > $BINDIR/guild <<EOF
+#!/bin/sh -eu
+
+export ROOTDIR=/usr/lib/guild
+export BINDIR=/usr/lib/guild/erts-$ERTS_VER/bin
+export EMU=beam
+export PROGNAME=\$0
+
+exec \$BINDIR/erlexec +B -boot \$ROOTDIR/start_clean -noshell -run guild main -extra "\$@"
+EOF
+
+chmod 755 $BINDIR/guild
